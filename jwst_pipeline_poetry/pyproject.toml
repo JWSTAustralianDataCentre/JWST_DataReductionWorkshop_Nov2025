@@ -1,0 +1,21 @@
+[project]
+name = "jadc-nircam-25"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Ivo Labbe",email = "ivolabbe@gmail.com"}
+]
+readme = "README.md"
+requires-python = "^3.12"
+dependencies = [
+    "jwst (>=1.19.2,<2.0.0)",
+    "astroquery (>=0.4.11,<0.5.0)",
+    "jupyter (>=1.1.1,<2.0.0)",
+    "jdaviz (>=4.4.1,<5.0.0)",
+    "ipython (>=9.6.0,<10.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

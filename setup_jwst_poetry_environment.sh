@@ -1,11 +1,8 @@
 # Setup instructions for using the poetry managed git repo
-NAME=jadc-nircam-25
-GITUSER=ivolabbe
+cd jwst_pipeline_poetry
 
+# install poetry incase not already installed
 pip install poetry
-
-git clone https://github.com/$GITUSER/$NAME.git
-cd $NAME
 
 # install the packages with dependencies
 poetry install --no-root
