@@ -1,6 +1,11 @@
 # Mac files
 .DS_Store
 
+# Office temp/lock files
+~$*
+*.tmp
+*.bak
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
