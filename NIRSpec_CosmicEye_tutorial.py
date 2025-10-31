@@ -1,5 +1,5 @@
 """
-Stage 1, 2, and 3 jwst pipeline reduction for The Cosmic Eye
+Stage 1, 2, and 3 NIRSpec/IFU pipeline reduction for The Cosmic Eye
 https://www.stsci.edu/jwst-program-info/download/jwst/pdf/4125/
 
 """
@@ -30,7 +30,7 @@ target = "Cosmic_Eye"
 
 reduce_stage1 = False
 reduce_stage2 = False
-reduce_stage3 = False
+reduce_stage3 = True
 
 create_config_file = True  # Turn this off after fist creation if want to change defaults
 # _______________________________________________________________________________________________#
@@ -40,8 +40,8 @@ create_config_file = True  # Turn this off after fist creation if want to change
 file_dir = pathlib.Path(__file__).parent.resolve()
 
 # raw_dir is where the uncalibrated (*uncal.fits) are, which were downloaded from MAST
-raw_dir = file_dir / "Cosmic_Eye/raw/"
-reduced_dir = file_dir / "Cosmic_Eye/reduced/"
+raw_dir = file_dir / "Cosmic_Eye_NIRSpec/raw/"
+reduced_dir = file_dir / "Cosmic_Eye_NIRSpec/reduced/"
 
 # For future reference, keep track of the current JWST and STCAL versions
 print(f"# JWST pipe version = {jwst.__version__}")
@@ -124,7 +124,7 @@ if reduce_stage3 is True:
 
     # get the intermediate cal files
     inter_cal_files = [str(filename) for filename in sorted(stage2_dir.glob("*_cal.fits"))]
-    print(f"******** Step 3: Working on {len(inter_cal_files)} rate files: ******** \n")
+    print(f"******** Step 3: Working on {len(inter_cal_files)} cal files: ******** \n")
     print(inter_cal_files)
 
     # creat the JSON file describing the file associations
@@ -139,7 +139,7 @@ if reduce_stage3 is True:
 
     # run the final stage
     result = Spec3Pipeline.call(
-        output_asn,  # Association (ASN) file listing the input exposures
+        str(output_asn),  # Association (ASN) file listing the input exposures
         save_results=True,  # Write outputs of each step to disk
         output_dir=str(stage3_dir),  # Directory where outputs will be saved
         config_file=str(stage3_dir / "stage3_params.asdf"),
