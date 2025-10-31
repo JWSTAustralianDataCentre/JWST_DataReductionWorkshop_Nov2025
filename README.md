@@ -8,11 +8,19 @@
 
 `bash setup_jwst_poetry_environment.sh`
 
-This will set up an environment managed by the python dependencies software ‘poetry’, which is similar to conda and venvs . We’ll be using this environment to run the pipeline. To test it has been set up correctly, in the ipython shell that automatically opens, run:
+This will set up an isolated python environment managed by the dependencies software ‘poetry’, which is similar to conda and venvs (so it won't interfere with your usual python environment). We’ll be using this environment to run the pipeline.
 
-`import jwst`
+To test it has been set up correctly, in the ipython shell that automatically opens, run:
+
+`import jwst`
 
 If it imports, you’re ready to go!
+
+If you get the following when running the bash script:
+
+`setup_jwst_poetry_environment.sh: line 5: pip: command not found`
+
+You'll need to work where you have a python installation, whether that's in a conda environment or your base system python.
 
 #### Other useful software
 
