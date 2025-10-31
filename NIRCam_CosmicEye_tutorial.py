@@ -1,5 +1,5 @@
 """
-Stage 1, 2, and 3 jwst pipeline reduction for The Cosmic Eye
+Stage 1, 2, and 3 NIRCam pipeline reduction for The Cosmic Eye
 https://www.stsci.edu/jwst-program-info/download/jwst/pdf/4125/
 
 """
@@ -65,7 +65,7 @@ for folder in [raw_dir, stage1_dir, stage2_dir, stage3_dir]:
 # The default values in these files can be overwritten there, or at the call to the pipeline by
 # passing in python dictionaries using the keywords in the config files.
 if create_config_file:
-    pipelines = [Detector1Pipeline(), Image2Pipeline(), Image2Pipeline()]
+    pipelines = [Detector1Pipeline(), Image2Pipeline(), Image3Pipeline()]
     directories = [stage1_dir, stage2_dir, stage3_dir]
     for i, (pipeline, directory) in enumerate(zip(pipelines, directories)):
         config_filename = directory / f"stage{i + 1}_params.asdf"
@@ -124,7 +124,7 @@ if reduce_stage3 is True:
 
     # get the intermediate cal files
     inter_cal_files = [str(filename) for filename in sorted(stage2_dir.glob("*_cal.fits"))]
-    print(f"******** Step 3: Working on {len(inter_cal_files)} rate files: ******** \n")
+    print(f"******** Step 3: Working on {len(inter_cal_files)} cal files: ******** \n")
     print(inter_cal_files)
 
     # creat the JSON file describing the file associations
@@ -139,7 +139,7 @@ if reduce_stage3 is True:
 
     # run the final stage
     result = Image3Pipeline.call(
-        output_asn,  # Association (ASN) file listing the input exposures
+        str(output_asn),  # Association (ASN) file listing the input exposures
         save_results=True,  # Write outputs of each step to disk
         output_dir=str(stage3_dir),  # Directory where outputs will be saved
         config_file=str(stage3_dir / "stage3_params.asdf"),
