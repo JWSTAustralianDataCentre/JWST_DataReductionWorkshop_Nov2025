@@ -20,9 +20,13 @@ If you get the following when running the bash script:
 
 `setup_jwst_poetry_environment.sh: line 5: pip: command not found`
 
-You'll need to work where you have a python installation, whether that's in a conda environment or your base system python.
+You'll need to work where you have a python installation, whether that's in a conda environment or your base system python. If you are working in a conda environment, make sure it has python version 3.12 or above. If it doesn't, make a new conda environemnt using
 
-#### Other useful software
+`conda create -n jwst python=3.12`
+
+And try running the bash script again.
+
+#### Other software we'll use during the workshop
 
 -   Download and install the [Astronomer’s proposal Tool](https://www.stsci.edu/scientific-community/software/astronomers-proposal-tool-apt "https://www.stsci.edu/scientific-community/software/astronomers-proposal-tool-apt")
 
