@@ -30,7 +30,7 @@ target = "Cosmic_Eye"
 
 reduce_stage1 = False
 reduce_stage2 = False
-reduce_stage3 = True
+reduce_stage3 = False
 
 create_config_file = True  # Turn this off after fist creation if want to change defaults
 # _______________________________________________________________________________________________#
