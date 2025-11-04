@@ -40,8 +40,8 @@ create_config_file = True  # Turn this off after fist creation if want to change
 file_dir = pathlib.Path(__file__).parent.resolve()
 
 # raw_dir is where the uncalibrated (*uncal.fits) are, which were downloaded from MAST
-raw_dir = file_dir / "Cosmic_Eye_NIRCam/raw/"
-reduced_dir = file_dir / "Cosmic_Eye_NIRCam/reduced/"
+raw_dir = file_dir / "Cosmic_Eye/NIRCam/raw/"
+reduced_dir = file_dir / "Cosmic_Eye/NIRCam/reduced/"
 
 # For future reference, keep track of the current JWST and STCAL versions
 print(f"# JWST pipe version = {jwst.__version__}")
