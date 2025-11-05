@@ -1,6 +1,6 @@
 # Workshop slides
 
-All the workshop slides are available at this [google drive][https://drive.google.com/drive/folders/18C-CmFfNId1Bk5zP4f_-YnQook7s7vrJ?usp=sharing]
+All the workshop slides are available at this [google drive](https://drive.google.com/drive/folders/18C-CmFfNId1Bk5zP4f_-YnQook7s7vrJ?usp=sharing)
 
 # JWST Python pipeline setup instructions
 
