@@ -89,7 +89,7 @@ if reduce_stage1 is True:
         result = Detector1Pipeline.call(
             uncal_file,
             save_results=True,
-            output_dir=stage1_dir,
+            output_dir=str(stage1_dir),
             config_file=str(stage1_dir / "stage1_params.asdf"),
         )
 
