@@ -89,7 +89,7 @@ if reduce_stage1 is True:
         result = Detector1Pipeline.call(
             uncal_file,
             save_results=True,
-            output_dir=str(stage1_dir),
+            output_dir=stage1_dir,
             config_file=str(stage1_dir / "stage1_params.asdf"),
         )
 
@@ -127,7 +127,7 @@ if reduce_stage3 is True:
     print(f"******** Step 3: Working on {len(inter_cal_files)} cal files: ******** \n")
     print(inter_cal_files)
 
-    # create the JSON file describing the file associations
+    # creat the JSON file describing the file associations
     out_asn = asn_from_list.asn_from_list(
         items=inter_cal_files, rule=DMS_Level3_Base, product_name="stage3"
     )
